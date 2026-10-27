@@ -43,19 +43,22 @@ Your task: Prove that every rearrangement eventually covers any initial segment!
 
 def Rearrangement (σ : ℕ → ℕ) : Prop := Injective σ ∧ Surjective σ
 
-/--
-A function `f` is called `Injective` if: for all `i, j`, `f i = f j → i = j`.
+/-- `(f : X → Y) := ∀ ⦃i j⦄, f i = f j → i = j`
+
+A function `f : X → Y` is called `Injective` if: for all `i, j`, `f i = f j → i = j`.
 -/
 DefinitionDoc Injective as "Injective"
 
 
-/--
-A function `f : X → Y` called `Surjective` if: for all `y : Y`, `∃ x : X` so that `f x = y`.
+/-- `(f : X → Y) := ∀ y, ∃ x, f x = y`
+
+A function `f : X → Y` is called `Surjective` if: for all `y : Y`, `∃ x : X` so that `f x = y`.
 -/
 DefinitionDoc Surjective as "Surjective"
 
 
-/--
+/-- `(σ : ℕ → ℕ) := Injective σ ∧ Surjective σ`
+
 A `Rearrangement` `σ : ℕ → ℕ` is a function that is `Injective` and `Surjective`.
 -/
 DefinitionDoc Rearrangement as "Rearrangement"
